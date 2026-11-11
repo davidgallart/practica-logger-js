@@ -26,13 +26,14 @@ function getDate(locale) {
 }
 
 function createFile(text) {
-  const document = 'informe.txt'
+  const mkdir = './temp'
+  const document = './temp/informe.txt'
   try {
-    if (fs.openSync(document)) {
-      fs.appendFileSync(document, text + '\n')
-      return text
+    if (!fs.existsSync(document)) {
+      fs.mkdirSync(mkdir)
     }
+    fs.appendFileSync(document, text + '\n')
   } catch (error) {
-    fs.writeFileSync(document, 'Informe del Sistema')
+    fs.mkdirSync(mkdir)
   }
 }
