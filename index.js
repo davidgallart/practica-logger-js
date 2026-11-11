@@ -1,17 +1,38 @@
 import chalk from 'chalk'
+import fs from 'node:fs'
 
 export function info(msj) {
-  console.log(chalk.blue('[INFO] ' + getDate() + ' ' + msj))
+  let text = '[INFO] ' + getDate() + ' ' + msj
+  console.log(chalk.blue(text))
+  createFile(text)
 }
 export function warn(msj) {
-  console.log(chalk.yellow('[WARN] ' + getDate() + ' ' + msj))
+  let text = '[WARN] ' + getDate() + ' ' + msj
+  console.log(chalk.yellow(text))
+  createFile(text)
 }
 export function error(msj) {
-  console.log(chalk.red('[ERROR] ' + getDate() + ' ' + msj))
+  let text = '[ERROR] ' + getDate() + ' ' + msj
+  console.log(chalk.red(text))
+  createFile(text)
 }
 export function debug(msj) {
-  console.log(chalk.gray('[DEBUG] ' + getDate() + ' ' + msj))
+  let text = '[DEBUG] ' + getDate() + ' ' + msj
+  console.log(chalk.gray(text))
+  createFile(text)
 }
 function getDate(locale) {
   return new Date().toLocaleString('es-ES')
+}
+
+function createFile(text) {
+  const document = 'informe.txt'
+  try {
+    if (fs.openSync(document)) {
+      fs.appendFileSync(document, text + '\n')
+      return text
+    }
+  } catch (error) {
+    fs.writeFileSync(document, 'Informe del Sistema')
+  }
 }
