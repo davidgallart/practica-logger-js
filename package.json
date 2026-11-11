@@ -1,0 +1,22 @@
+{
+  "name": "practica-logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./app.js" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidgallart/practica-logger-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/davidgallart/practica-logger-js/issues"
+  },
+  "homepage": "https://github.com/davidgallart/practica-logger-js#readme"
+}
