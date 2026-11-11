@@ -19,7 +19,7 @@
     "url": "https://github.com/davidgallart/practica-logger-js/issues"
   },
   "homepage": "https://github.com/davidgallart/practica-logger-js#readme",
-  "devDependencies": {
-    "davidgallart-logger": "^0.0.0-stage"
+  "dependencies": {
+    "chalk": "^6.0.1"
   }
 }
